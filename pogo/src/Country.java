@@ -1,13 +1,14 @@
 public class Country {
 
-    private static String CountryName = "";
-    private static int PopulationSize = 0;
-    private static int Area = 0;
-    private static String Сapital = "";
-    private static boolean PresenceSea = false;
+    private static String countryName = "";
+    private static int populationSize = 0;
+    private static int area = 0;
+    private static String capital = "";
+    private static boolean presenceSea = false;
 
-    public static void main(String[] args) {
 
+
+    public Country() {
         setCountryName("Россия");
         getCountryName();
 
@@ -23,53 +24,50 @@ public class Country {
         setPresenceSea(true);
         getPresenceSea();
 
-        System.out.println("Страна: " + CountryName + " Численность населения: " + PopulationSize + " Площадь: " + Area + " Наличие моря: " + true);
+        System.out.println("Страна: " + countryName + " Численность населения: " + populationSize + " Площадь: " + area + " Наличие моря: " + true);
 
-    }
-
-    public Country() {
     }
 
     public static String getCountryName() {
-        return CountryName;
+        return countryName;
     }
 
     public static void setCountryName(String countryName) {
-        CountryName = countryName;
+        countryName = countryName;
     }
 
 
 
     public static int getPopulationSize() {
-        return PopulationSize;
+        return populationSize;
     }
 
     public static void setPopulationSize(int populationSize) {
-        PopulationSize = populationSize;
+        populationSize = populationSize;
     }
 
     public static int getArea() {
-        return Area;
+        return area;
     }
 
     public static void setArea(int area) {
-        Area = area;
+        area = area;
     }
 
     public static String getСapital() {
-        return Сapital;
+        return capital;
     }
 
     public static void setСapital(String сapital) {
-        Сapital = сapital;
+        capital = сapital;
     }
 
     public static boolean getPresenceSea() {
-        return PresenceSea;
+        return presenceSea;
     }
 
     public static void setPresenceSea(boolean presenceSea) {
-        PresenceSea = presenceSea;
+        presenceSea = presenceSea;
     }
 
 
