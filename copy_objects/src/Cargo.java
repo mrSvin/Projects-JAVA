@@ -1,13 +1,13 @@
 public class Cargo {
 
-    private final int dimensions;
+    private Dimensions dimensions;
     private final String massa;
     private final String adress;
     private final String property;
     private final String number;
     private final String fragile;
 
-    public Cargo(int dimensions, String massa, String adress, String property, String number, String fragile) {
+    public Cargo(Dimensions dimensions, String massa, String adress, String property, String number, String fragile) {
         this.dimensions = dimensions;
         this.massa = massa;
         this.adress = adress;
@@ -16,11 +16,11 @@ public class Cargo {
         this.fragile = fragile;
     }
 
-    public int getDimensions() {
+    public Dimensions getDimensions() {
         return dimensions;
     }
 
-    public Cargo setDimensions(int dimensions) {
+    public Cargo setDimensions(Dimensions dimensions) {
        return new Cargo(dimensions, massa, adress, property, number, fragile);
     }
 

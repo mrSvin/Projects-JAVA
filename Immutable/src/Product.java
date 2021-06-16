@@ -1,7 +1,8 @@
 public class Product {
     private final String name;
     private final String barCode;
-    private int price;
+
+    private int price = 30;
 
     public Product(String name, int price, String barCode) {
         this.name = name;
@@ -19,5 +20,10 @@ public class Product {
     public int getPrice() {
         return price;
     }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 
 }
