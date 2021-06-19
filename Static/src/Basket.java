@@ -1,6 +1,6 @@
 public class Basket {
 
-    private static int count = 0;
+    private int count = 0;
     private String items = "";
     private int totalPrice = 0;
     private int limit;
@@ -26,12 +26,12 @@ public class Basket {
         this.totalPrice = totalPrice;
     }
 
-    public static int getCount() {
+    public int getCount() {
         return count;
     }
 
-    public static void increaseCount(int count) {
-        Basket.count = Basket.count + count;
+    public void increaseCount(int count) {
+        count = count + count;
     }
 
     public void add(String name, int price) {
@@ -63,11 +63,11 @@ public class Basket {
         totalPrice = 0;
     }
 
-    public static void add_allPrice(double addPrice) {
+    public static void addAllPrice(double addPrice) {
         allPrice=allPrice+addPrice;
         System.out.println("Добавлена сумма к корзине: "+ addPrice + " Общая сумма в корзине: " + allPrice);
     }
-    public static void add_allCount(double addCount) {
+    public static void addAllCount(double addCount) {
         allCount=allCount+addCount;
         countBasket++;
         System.out.println("Добавлено количества товаров в корзину: "+ allCount + " Общее количество товаров в корзине: " + addCount);
