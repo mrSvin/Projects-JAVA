@@ -2,11 +2,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator.calculate(34, 25, Gearboxtype.ADD);
+        new ArithmeticCalculator().calculate(3, 5, Gearboxtype.ADD);
+        new ArithmeticCalculator().calculate(10, 5, Gearboxtype.SUBTRACT);
+        new ArithmeticCalculator().calculate(3, 5, Gearboxtype.MULTIPLY);
 
-        ArithmeticCalculator arithmeticCalculator2 = new ArithmeticCalculator.calculate(34, 25, Gearboxtype.SUBTRACT);
-
-        ArithmeticCalculator arithmeticCalculator3 = new ArithmeticCalculator.calculate(34, 25, Gearboxtype.MULTIPLY);
         
     }
 }
