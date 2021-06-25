@@ -1,28 +1,30 @@
 public class CPU {
 
-    int freq=0;
-    int cores=0;
-    String manufac="USA";
-    public static int weightCPU=0;
+    private int freq=0;
+    private int cores=0;
+    private String manufac="USA";
+    private int weightCPU=0;
+    private CpuType cpuMod;
 
-    public String cpu(cpuType type) {
-        if (type.equals(cpuType.amd)) {
-            freq=3200;
-            cores=12;
-            manufac="США";
-            weightCPU=326;
-            System.out.println("Выбран процессор: " + cpuType.amd + " Частота: "
+    public void cpu(CpuType type) {
+        if (type.equals(CpuType.amd)) {
+            setCpuMod(CpuType.amd);
+            setFreq(3200);
+            setCores(12);
+            setManufac("США");
+            setWeightCPU(326);
+            System.out.println("Выбран процессор: " + CpuType.amd + " Частота: "
                     + freq + " Количество ядер: " + cores + " Производитель: " + manufac + " Вес: " + weightCPU);
         }
-        if (type.equals(cpuType.intel)) {
-            freq=2800;
-            cores=8;
-            manufac="США";
-            weightCPU=286;
-            System.out.println("Выбран процессор: " + cpuType.intel + " Частота: "
+        if (type.equals(CpuType.intel)) {
+            setCpuMod(CpuType.intel);
+            setFreq(2800);
+            setCores(8);
+            setManufac("США");
+            setWeightCPU(283);
+            System.out.println("Выбран процессор: " + CpuType.intel + " Частота: "
                     + freq + " Количество ядер: " + cores + " Производитель: " + manufac + " Вес: " + weightCPU);
         }
-        return null;
     }
 
     public int getFreq() {
@@ -49,12 +51,19 @@ public class CPU {
         this.manufac = manufac;
     }
 
-    public static int getWeightCPU() {
+    public int getWeightCPU() {
         return weightCPU;
     }
 
-    public static void setWeightCPU(int weightCPU) {
-        CPU.weightCPU = weightCPU;
+    public void setWeightCPU(int weightCPU) {
+        this.weightCPU = weightCPU;
+    }
+    public CpuType getCpuMod() {
+        return cpuMod;
+    }
+
+    public void setCpuMod(CpuType cpuMod) {
+        this.cpuMod = cpuMod;
     }
 
 }

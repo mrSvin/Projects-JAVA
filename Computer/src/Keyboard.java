@@ -1,19 +1,19 @@
 public class Keyboard {
 
-    String backlight="нет";
-    public static int weightKeyboard=0;
+    private String backlight="нет";
+    private int weightKeyboard=0;
 
-    public void keyboard(keyboardType type) {
-        if (type.equals(keyboardType.mechanical)) {
-            backlight="нет";
-            weightKeyboard=856;
-            System.out.println("Выбрана клавиатура: " + keyboardType.mechanical + " подсветка: "
+    public void keyboard(KeyboardType type) {
+        if (type.equals(KeyboardType.mechanical)) {
+            setBacklight("нет");
+            setWeightKeyboard(856);
+            System.out.println("Выбрана клавиатура: " + KeyboardType.mechanical + " подсветка: "
                     + backlight + " Вес: " + weightKeyboard);
         }
-        if (type.equals(keyboardType.touch)) {
-            backlight="да";
-            weightKeyboard=621;
-            System.out.println("Выбрана клавиатура: " + keyboardType.touch + " подсветка: "
+        if (type.equals(KeyboardType.touch)) {
+            setBacklight("да");
+            setWeightKeyboard(621);
+            System.out.println("Выбрана клавиатура: " + KeyboardType.touch + " подсветка: "
                     + backlight + " Вес: " + weightKeyboard);
         }
 
@@ -28,12 +28,12 @@ public class Keyboard {
         this.backlight = backlight;
     }
 
-    public static int getWeightKeyboard() {
+    public int getWeightKeyboard() {
         return weightKeyboard;
     }
 
-    public static void setWeightKeyboard(int weightKeyboard) {
-        Keyboard.weightKeyboard = weightKeyboard;
+    public void setWeightKeyboard(int weightKeyboard) {
+        this.weightKeyboard = weightKeyboard;
     }
 
 }

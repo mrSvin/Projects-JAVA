@@ -1,25 +1,25 @@
 public class Monitor {
-    int diagonal=0;
-    int memory=0;
-    public static int weightMonitor=0;
+    private int diagonal=0;
+    private int memory=0;
+    private int weightMonitor=0;
 
-    public void monitor(monitorType type) {
-        if (type.equals(monitorType.IPS)) {
-            diagonal=24;
-            weightMonitor=2356;
-            System.out.println("Выбран экран: " + monitorType.IPS + " диагональ: "
+    public void monitor(MonitorType type) {
+        if (type.equals(MonitorType.IPS)) {
+            setDiagonal(24);
+            setWeightMonitor(2356);
+            System.out.println("Выбран экран: " + MonitorType.IPS + " диагональ: "
                     + diagonal + " Вес: " + weightMonitor);
         }
-        if (type.equals(monitorType.TN)) {
-            diagonal=22;
-            weightMonitor=1856;
-            System.out.println("Выбран экран: " + monitorType.TN + " диагональ: "
+        if (type.equals(MonitorType.TN)) {
+            setDiagonal(22);
+            setWeightMonitor(1856);
+            System.out.println("Выбран экран: " + MonitorType.TN + " диагональ: "
                     + diagonal + " Вес: " + weightMonitor);
         }
-        if (type.equals(monitorType.VA)) {
-            diagonal=19;
-            weightMonitor=1657;
-            System.out.println("Выбран экран: " + monitorType.VA + " диагональ: "
+        if (type.equals(MonitorType.VA)) {
+            setDiagonal(19);
+            setWeightMonitor(1657);
+            System.out.println("Выбран экран: " + MonitorType.VA + " диагональ: "
                     + diagonal + " Вес: " + weightMonitor);
         }
         return;
@@ -41,12 +41,12 @@ public class Monitor {
         this.memory = memory;
     }
 
-    public static int getWeightMonitor() {
+    public int getWeightMonitor() {
         return weightMonitor;
     }
 
-    public static void setWeightMonitor(int weightMonitor) {
-        Monitor.weightMonitor = weightMonitor;
+    public void setWeightMonitor(int weightMonitor) {
+        this.weightMonitor = weightMonitor;
     }
 
 }

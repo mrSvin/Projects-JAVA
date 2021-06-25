@@ -1,22 +1,22 @@
 public class DDR {
 
-    String typeDDR="DDR";
-    int memory=0;
-    public static int weightDDR=0;
+    private String typeDDR="DDR";
+    private int memory=0;
+    private int weightDDR=0;
 
-    public void ddr(ddrType type) {
-        if (type.equals(ddrType.ddr3)) {
-            typeDDR="DDR3";
-            memory=4096;
-            weightDDR=159;
-            System.out.println("Выбрана оперативная память: " + ddrType.ddr3 + " Память: "
+    public void ddr(DdrType type) {
+        if (type.equals(DdrType.ddr3)) {
+            setTypeDDR("DDR3");
+            setMemory(4096);
+            setWeightDDR(159);
+            System.out.println("Выбрана оперативная память: " + DdrType.ddr3 + " Память: "
                     + memory + " Вес: " + weightDDR);
         }
-        if (type.equals(ddrType.ddr2)) {
-            typeDDR="DDR2";
-            memory=1024;
-            weightDDR=164;
-            System.out.println("Выбрана оперативная память: " + ddrType.ddr2 + " Память: "
+        if (type.equals(DdrType.ddr2)) {
+            setTypeDDR("DDR2");
+            setMemory(1024);
+            setWeightDDR(164);
+            System.out.println("Выбрана оперативная память: " + DdrType.ddr2 + " Память: "
                     + memory + " Вес: " + weightDDR);
         }
         return;
@@ -38,12 +38,12 @@ public class DDR {
         this.memory = memory;
     }
 
-    public static int getWeightDDR() {
+    public int getWeightDDR() {
         return weightDDR;
     }
 
-    public static void setWeightDDR(int weightDDR) {
-        DDR.weightDDR = weightDDR;
+    public void setWeightDDR(int weightDDR) {
+        this.weightDDR = weightDDR;
     }
 
 }

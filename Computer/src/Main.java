@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Ноутбук 1:");
-        Computer computer = new Computer(cpuType.intel, ddrType.ddr3, hddType.SSD, keyboardType.touch, monitorType.IPS);
+        Computer computer = new Computer(CpuType.intel, DdrType.ddr3, HddType.SSD, KeyboardType.touch, MonitorType.IPS);
         System.out.println(computer);
         System.out.println("\n" + "Ноутбук 2:");
-        Computer computer2 = new Computer(cpuType.amd, ddrType.ddr3, hddType.HDD, keyboardType.touch, monitorType.TN);
+        Computer computer2 = new Computer(CpuType.amd, DdrType.ddr3, HddType.HDD, KeyboardType.touch, MonitorType.TN);
         System.out.println(computer2);
         System.out.println("\n" + "Ноутбук 3:");
-        Computer computer3 = new Computer(cpuType.amd, ddrType.ddr2, hddType.HDD, keyboardType.mechanical, monitorType.VA);
+        Computer computer3 = new Computer(CpuType.amd, DdrType.ddr2, HddType.HDD, KeyboardType.mechanical, MonitorType.VA);
         System.out.println(computer3);
 
     }

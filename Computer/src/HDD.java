@@ -1,22 +1,22 @@
 public class HDD {
 
-    String typeHDD="SSD";
-    int memory=0;
-    public static int weightHDD=0;
+    private String typeHDD="SSD";
+    private int memory=0;
+    private int weightHDD=0;
 
-    public void hdd(hddType type) {
-        if (type.equals(hddType.HDD)) {
-            typeHDD="HDD";
-            memory=128;
-            weightHDD=672;
-            System.out.println("Выбран жесткий диск: " + hddType.HDD + " Память: "
+    public void hdd(HddType type) {
+        if (type.equals(HddType.HDD)) {
+            setTypeHDD("HDD");
+            setMemory(128);
+            setWeightHDD(672);
+            System.out.println("Выбран жесткий диск: " + HddType.HDD + " Память: "
                     + memory + " Вес: " + weightHDD);
         }
-        if (type.equals(hddType.SSD)) {
-            typeHDD="SSD";
-            memory=256;
-            weightHDD=215;
-            System.out.println("Выбран жесткий диск: " + hddType.SSD + " Память: "
+        if (type.equals(HddType.SSD)) {
+            setTypeHDD("SSD");
+            setMemory(256);
+            setWeightHDD(215);
+            System.out.println("Выбран жесткий диск: " + HddType.SSD + " Память: "
                     + memory + " Вес: " + weightHDD);
         }
 
@@ -38,12 +38,12 @@ public class HDD {
         this.memory = memory;
     }
 
-    public static int getWeightHDD() {
+    public int getWeightHDD() {
         return weightHDD;
     }
 
-    public static void setWeightHDD(int weightHDD) {
-        HDD.weightHDD = weightHDD;
+    public void setWeightHDD(int weightHDD) {
+        this.weightHDD = weightHDD;
     }
 
 }
