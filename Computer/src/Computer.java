@@ -3,23 +3,31 @@ public class Computer {
     private String vendor="China";
     private String name ="IBM";
     private int allWeight=0;
-    private CPU cpu;
-    private DDR ddr;
-    private HDD hdd;
-    private Keyboard keyboard;
-    private Monitor monitor;
+    private CPU cpuComputer;
+    private DDR ddrComputer;
+    private HDD hddComputer;
+    private Keyboard keyboardComputer;
+    private Monitor monitorComputer;
 
     public Computer (CpuType cpu, DdrType ddr, HddType hdd, KeyboardType keyboard, MonitorType monitor) {
 
-        new CPU().cpu(cpu);
-        new DDR().ddr(ddr);
-        new HDD().hdd(hdd);
-        new Monitor().monitor(monitor);
-        new Keyboard().keyboard(keyboard);
-        allWeight = CPU.getWeightCPU();
-        System.out.println(allWeight);
-       // allWeight();
+        cpuComputer = new CPU(cpu);
+        cpuComputer.getFreq();
+        cpuComputer.getCores();
+        cpuComputer.getManufac();
+        ddrComputer= new DDR(ddr);
+        ddrComputer.getTypeDDR();
+        ddrComputer.getMemory();
+        hddComputer= new HDD(hdd);
+        hddComputer.getTypeHDD();
+        hddComputer.getMemory();
+        monitorComputer=new Monitor(monitor);
+        monitorComputer.getDiagonal();
+        keyboardComputer=new Keyboard(keyboard);
+        keyboardComputer.getBacklight();
 
+          allWeight = cpuComputer.getWeightCPU()+ddrComputer.getWeightDDR()+hddComputer.getWeightHDD()
+                  +monitorComputer.getWeightMonitor()+keyboardComputer.getWeightKeyboard();
 
         this.vendor = vendor;
         this.name = name;

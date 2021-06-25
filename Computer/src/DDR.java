@@ -4,7 +4,7 @@ public class DDR {
     private int memory=0;
     private int weightDDR=0;
 
-    public void ddr(DdrType type) {
+    public DDR(DdrType type) {
         if (type.equals(DdrType.ddr3)) {
             setTypeDDR("DDR3");
             setMemory(4096);

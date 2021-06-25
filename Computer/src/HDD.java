@@ -4,7 +4,7 @@ public class HDD {
     private int memory=0;
     private int weightHDD=0;
 
-    public void hdd(HddType type) {
+    public HDD(HddType type) {
         if (type.equals(HddType.HDD)) {
             setTypeHDD("HDD");
             setMemory(128);

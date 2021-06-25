@@ -3,7 +3,7 @@ public class Keyboard {
     private String backlight="нет";
     private int weightKeyboard=0;
 
-    public void keyboard(KeyboardType type) {
+    public Keyboard(KeyboardType type) {
         if (type.equals(KeyboardType.mechanical)) {
             setBacklight("нет");
             setWeightKeyboard(856);
@@ -17,7 +17,6 @@ public class Keyboard {
                     + backlight + " Вес: " + weightKeyboard);
         }
 
-        return;
     }
 
     public String getBacklight() {

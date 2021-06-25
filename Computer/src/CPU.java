@@ -4,11 +4,10 @@ public class CPU {
     private int cores=0;
     private String manufac="USA";
     private int weightCPU=0;
-    private CpuType cpuMod;
 
-    public void cpu(CpuType type) {
+
+    public CPU(CpuType type) {
         if (type.equals(CpuType.amd)) {
-            setCpuMod(CpuType.amd);
             setFreq(3200);
             setCores(12);
             setManufac("США");
@@ -17,7 +16,6 @@ public class CPU {
                     + freq + " Количество ядер: " + cores + " Производитель: " + manufac + " Вес: " + weightCPU);
         }
         if (type.equals(CpuType.intel)) {
-            setCpuMod(CpuType.intel);
             setFreq(2800);
             setCores(8);
             setManufac("США");
@@ -57,13 +55,6 @@ public class CPU {
 
     public void setWeightCPU(int weightCPU) {
         this.weightCPU = weightCPU;
-    }
-    public CpuType getCpuMod() {
-        return cpuMod;
-    }
-
-    public void setCpuMod(CpuType cpuMod) {
-        this.cpuMod = cpuMod;
     }
 
 }

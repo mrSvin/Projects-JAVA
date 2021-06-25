@@ -1,9 +1,8 @@
 public class Monitor {
     private int diagonal=0;
-    private int memory=0;
     private int weightMonitor=0;
 
-    public void monitor(MonitorType type) {
+    public Monitor(MonitorType type) {
         if (type.equals(MonitorType.IPS)) {
             setDiagonal(24);
             setWeightMonitor(2356);
@@ -22,7 +21,6 @@ public class Monitor {
             System.out.println("Выбран экран: " + MonitorType.VA + " диагональ: "
                     + diagonal + " Вес: " + weightMonitor);
         }
-        return;
     }
 
     public int getDiagonal() {
@@ -31,14 +29,6 @@ public class Monitor {
 
     public void setDiagonal(int diagonal) {
         this.diagonal = diagonal;
-    }
-
-    public int getMemory() {
-        return memory;
-    }
-
-    public void setMemory(int memory) {
-        this.memory = memory;
     }
 
     public int getWeightMonitor() {
