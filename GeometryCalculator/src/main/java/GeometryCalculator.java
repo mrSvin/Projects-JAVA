@@ -1,3 +1,4 @@
+import static java.lang.StrictMath.abs;
 import static java.lang.StrictMath.sqrt;
 
 public class GeometryCalculator {
@@ -12,7 +13,7 @@ public class GeometryCalculator {
 
     // метод должен использовать абсолютное значение radius
     public static double getSphereVolume(double radius) {
-        double result = 4/3.0*Math.PI * radius *radius*radius;
+        double result = 4/3.0*Math.PI * abs(radius *radius*radius);
         System.out.println("Объем шара: " + result);
         return result;
     }
