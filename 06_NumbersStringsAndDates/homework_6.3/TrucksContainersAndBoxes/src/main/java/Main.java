@@ -39,39 +39,23 @@ public class Main {
             truck=truck+1;
         }
 
-        if (truck>1) {
-            for (int i=1;i<=truck-1; i++) {
+        int b=1;
+        int c=1;
+        int a=1;
+            for (int i=1;i<=truck; i++) {
                 System.out.println("Грузовик: " + i);
-                for (int k=1;k<=12; k++) {
-                    System.out.println("\tКонтейнер: " + k);
-                    for (int b=1;b<=27; b++) {
-                        System.out.println("\t\tЯщик: " + b);
+                for (int k=1;a<=container && k<=12; k++) {
+                    System.out.println("\tКонтейнер: " + a);
+                    a++;
+                    for (b=1; c<=box && b<=27; b++) {
+                        System.out.println("\t\tЯщик: " + c);
+                        c++;
                     }
                 }
             }
-            System.out.println("Грузовик: " + truck);
-            for (int k=1;k<=(container-(truck-1)*12)-1; k++) {
-                System.out.println("\tКонтейнер: " + k);
-                for (int b=1;b<=27; b++) {
-                    System.out.println("\t\tЯщик: " + b);
-                }
-            }
-            System.out.println("\tКонтейнер: " + (container-(truck-1)*12));
-            for (int b=1;b<=box-(container-1)*27; b++) {
-                System.out.println("\t\tЯщик: " + b);
-            }
 
-        } else {
-            System.out.println("Грузовик: " + 1);
-            if (container==1) {
-                System.out.println("\tКонтейнер: " + 1);
-            }
-            if (container==1) {
-                for (int i=1; i<=box; i++) {
-                    System.out.println("\t\tЯщик: " + i);
-                }
-            }
-        }
+
+
 
         System.out.println("Необходимо:");
         System.out.println("грузовиков - " + truck + " шт.");
