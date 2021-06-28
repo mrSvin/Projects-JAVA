@@ -34,7 +34,7 @@ public class Main {
         //System.out.println(yearNow);
 
 
-        int k = 0;
+        int counter = 0;
 
         for (int i = year; i <= Integer.parseInt(yearNow); i++) {
 
@@ -42,10 +42,10 @@ public class Main {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(i, month - 1, day);
                 calendar.get(Calendar.DAY_OF_WEEK);
-                weekNow = formatDate(k, day, month, i,
+                weekNow = formatDate(counter, day, month, i,
                         calendar.get(Calendar.DAY_OF_WEEK));
                 result = result + weekNow + "\n";
-                k++;
+                counter++;
             }
 
         }
