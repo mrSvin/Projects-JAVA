@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-
         int day = 27;
         int month = 6;
         int year = 2021;
@@ -27,30 +26,29 @@ public class Main {
         //1 - 31.12.1991 - Tue
         //System.out.println( new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime()) );
 
-        String dayNow =  new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
-        String monthNow =  new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
-        String yearNow =  new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+        String dayNow = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
+        String monthNow = new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
+        String yearNow = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
         //System.out.println(dayNow);
         //System.out.println(monthNow);
         //System.out.println(yearNow);
 
 
-        int k=0;
+        int k = 0;
 
-            for (int i = year; i <= Integer.parseInt(yearNow); i++) {
+        for (int i = year; i <= Integer.parseInt(yearNow); i++) {
 
-                if (i<Integer.parseInt(yearNow) || (i==Integer.parseInt(yearNow) && month<=Integer.parseInt(monthNow))  ) {
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.set(i, month - 1, day);
-                    calendar.get(Calendar.DAY_OF_WEEK);
-                    weekNow = formatDate(k, day, month, i,
-                            calendar.get(Calendar.DAY_OF_WEEK));
-                    result = result + weekNow + "\n";
-                    k++;
-                }
-
+            if (i < Integer.parseInt(yearNow) || (i == Integer.parseInt(yearNow) && month <= Integer.parseInt(monthNow))) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(i, month - 1, day);
+                calendar.get(Calendar.DAY_OF_WEEK);
+                weekNow = formatDate(k, day, month, i,
+                        calendar.get(Calendar.DAY_OF_WEEK));
+                result = result + weekNow + "\n";
+                k++;
             }
 
+        }
 
 
         return result;
