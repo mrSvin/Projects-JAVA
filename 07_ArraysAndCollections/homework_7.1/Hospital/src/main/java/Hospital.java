@@ -5,13 +5,15 @@ public class Hospital {
     public static float[] generatePatientsTemperatures(int patientsCount) {
 
         //TODO: напишите метод генерации массива температур пациентов
-        float[] array_temperature = new float[]{
-                33.1F, 33.1F, 32.5F, 33.5F, 34.5F, 36.5F, 38.5F, 39.5F, 33.3F, 32.7F,
-                36.9F, 36.5F, 34.3F, 37.5F, 32.5F, 32.5F, 32.4F, 34.5F, 35.4F, 32.5F,
-                34.5F, 39.4F, 32.5F, 36.5F, 36.4F, 39.6F, 37.5F, 32.5F, 37.5F, 39.4F
-        };
+        float[] array = new float[patientsCount];
 
-        return array_temperature;
+        for (int i = 0; i < patientsCount; i++) {
+            array[i] = (float) (32 + Math.random() * 4);
+            //System.out.println(array[i]);
+        }
+
+
+        return array;
     }
 
     public static String getReport(float[] temperatureData) {
@@ -25,10 +27,23 @@ public class Hospital {
                 IntStream.range(0, temperatureData.length)
                         .mapToObj(i -> String.valueOf(finalTemperatureData[i])).toArray(String[]::new));
 
+        double average = 0;
+        int count = 0;
+        if (temperatureData.length > 0) {
+            float sum = 0;
+            for (int j = 0; j < temperatureData.length; j++) {
+                sum += temperatureData[j];
+                if (temperatureData[j] >= 36.2 && temperatureData[j] < 37) {
+                    count++;
+                }
+            }
+            average = sum / temperatureData.length;
+        }
+
         String report =
                 "Температуры пациентов: " + temperatures +
-                        "\nСредняя температура: " + 0 +
-                        "\nКоличество здоровых: " + 0;
+                        "\nСредняя температура: " + String.format("%.2f", average) +
+                        "\nКоличество здоровых: " + count;
 
         return report;
     }
