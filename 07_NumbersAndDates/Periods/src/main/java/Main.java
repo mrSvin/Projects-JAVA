@@ -19,7 +19,7 @@ public class Main {
         System.out.println(years + " years " + months + " months " + days + " days");
 
 
-        return String.valueOf(period);
+        return years + " years " + months + " months " + days + " days";
     }
 
 }
