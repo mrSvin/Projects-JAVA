@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PhoneBook {
 
@@ -7,7 +9,16 @@ public class PhoneBook {
     public void addContact(String phone, String name) {
         // проверьте корректность формата имени и телефона
         // если такой номер уже есть в списке, то перезаписать имя абонента
-        phoneBook.put(phone, name);
+
+        String numberOnly= phone.replaceAll("[^0-9]", "");
+        String lettersOnly= name.replaceAll("[^a-zA-Zа-яёА-ЯЁ ]", "");
+        System.out.println(numberOnly);
+        System.out.println(lettersOnly);
+
+        if (lettersOnly.length() > 0 && numberOnly.length() > 0) {
+            phoneBook.put(phone, name);
+        }
+
     }
 
     public String getNameByPhone(String phone) {
@@ -34,22 +45,24 @@ public class PhoneBook {
     public Set<String> getAllContacts() {
         // формат одного контакта "Имя - Телефон"
         // если контактов нет в телефонной книге - вернуть пустой TreeSet
-        String allContact = "";
+        //String allContact = "";
 
         //String resultSearch = Arrays.toString(phoneBook.entrySet().toArray());
-
+        TreeSet<String> states = new TreeSet<String>();
 
         for (String key : phoneBook.keySet()) {
-            if (allContact.equals("") == false) {
-                allContact = allContact + ", ";
-            }
+            // if (allContact.equals("") == false) {
+            //      allContact = allContact + ", "; }
+
             int lengthKey = phoneBook.get(key).length();
-            if (lengthKey>0) {
-                allContact = allContact + phoneBook.get(key) + " - " + key;
+            if (lengthKey > 0) {
+                //allContact = allContact + phoneBook.get(key) + " - " + key;
+                states.add(phoneBook.get(key) + " - " + key);
             }
         }
-        //Set<String> expected = Set.of("Маша - 79001234567", "Миша - 79991234567");
-        return Set.of(allContact);
+
+
+        return states;
     }
 
 }

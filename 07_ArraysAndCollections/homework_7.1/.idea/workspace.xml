@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77ee8fda-aaac-496b-9cae-bdc6c5c025e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../05_StaticFinal/02_enum/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_StaticFinal/02_enum/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_StaticFinal/02_enum/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../05_StaticFinal/02_enum/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_NumbersStringsAndDates/homework_6.4/FullNameFormatter/FullNameFormatter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/homework_7.1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_guava_guava_29_0_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__com_puppycrawl_tools_checkstyle_8_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__info_picocli_picocli_4_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__net_sf_saxon_Saxon_HE_9_9_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/CoolNumber.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_guava_guava_29_0_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__com_puppycrawl_tools_checkstyle_8_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__info_picocli_picocli_4_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__net_sf_saxon_Saxon_HE_9_9_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/Inheritance1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.1/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.2/Inheritance1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/homework_8.4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/src/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/src/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/homework_8.4/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/send_accounts/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_InheritanceAndPolymorphism/send_accounts/Inheritance1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework_7.2/TodoList/src/main/java/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework_7.2/TodoList/src/main/java/TodoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework_7.4/PhoneBook/src/main/java/PhoneBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework_7.4/PhoneBook/src/main/java/PhoneBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework_7.5/CoolNumber/src/main/java/CoolNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework_7.5/CoolNumber/src/main/java/CoolNumbers.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ucBLtGTFaFLnw3ACHLYVGCA4B4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homework_7.2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77ee8fda-aaac-496b-9cae-bdc6c5c025e2" name="Default Changelist" comment="" />
+      <created>1624954943289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624954943289</updated>
+      <workItem from="1624954944529" duration="3000" />
+      <workItem from="1625042613557" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1625042638802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1625042638802" />
+  </component>
+</project>

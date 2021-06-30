@@ -12,7 +12,7 @@ public class TodoList {
     public void add(int index, String todo) {
         // TODO: добавьте дело на указаный индекс,
         //  проверьте возможность добавления
-        if (index==arrayList.size()+1) {
+        if (index == arrayList.size() + 1) {
             arrayList.add(todo);
         }
         if (index < arrayList.size()) {
