@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Программа для хранения списка дел")
+class TodoListTest {
 
     private TodoList todoList;
 
