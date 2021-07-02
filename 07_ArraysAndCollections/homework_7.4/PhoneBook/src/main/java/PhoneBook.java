@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class PhoneBook {
 
-    TreeMap<String, String> phoneBook = new TreeMap<>();
+    public TreeMap<String, String> phoneBook = new TreeMap<>();
 
     public void addContact(String phone, String name) {
         // проверьте корректность формата имени и телефона
@@ -12,12 +12,13 @@ public class PhoneBook {
 
         String numberOnly= phone.replaceAll("[^0-9]", "");
         String lettersOnly= name.replaceAll("[^a-zA-Zа-яёА-ЯЁ ]", "");
-        System.out.println(numberOnly);
-        System.out.println(lettersOnly);
+        //System.out.println(numberOnly);
+        //System.out.println(lettersOnly);
 
         if (lettersOnly.length() > 0 && numberOnly.length() > 0) {
             phoneBook.put(phone, name);
         }
+        System.out.println("Контакт сохранен!");
 
     }
 
@@ -60,7 +61,7 @@ public class PhoneBook {
                 states.add(phoneBook.get(key) + " - " + key);
             }
         }
-
+        System.out.println(states);
 
         return states;
     }

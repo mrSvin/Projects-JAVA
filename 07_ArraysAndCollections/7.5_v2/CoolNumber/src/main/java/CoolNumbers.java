@@ -1,3 +1,5 @@
+import net.sf.saxon.om.Item;
+
 import java.util.*;
 
 public class CoolNumbers {
@@ -7,17 +9,23 @@ public class CoolNumbers {
     public static List<String> generateCoolNumbers() {
 
 
-        String dict = "АВЕКМНОРСТУХ"; //строка содержит все доступные символы
+        String dict = "АВЕКМНОРСТУХ"; //строка содержит все доступные символы АВЕКМНОРСТУХ
 
-        for (int i = 0; i < 2000001; i++) {
-            int number = 1 + (int) (Math.random() * 998);
+
+        for (int i = 0; i < 20000001; i++) {
+            int number =(int) (Math.random() * 999);
             int region = 1 + (int) (Math.random() * 198);
-            char symbolFirst = dict.charAt((int) (Math.random() * 11));
-            char symbolTwo = dict.charAt((int) (Math.random() * 11));
-            char symbolThree = dict.charAt((int) (Math.random() * 11));
+            char symbolFirst = dict.charAt((int) (Math.random() * 12));
+            char symbolTwo = dict.charAt((int) (Math.random() * 12));
+            char symbolThree = dict.charAt((int) (Math.random() * 12));
 
-            numberAuto.add(Character.toString(symbolFirst) + number + symbolTwo + symbolThree + region);
+            if (region<10) {
+                numberAuto.add(Character.toString(symbolFirst) + number + symbolTwo + symbolThree + "0" + region);
+            } else  {
+                numberAuto.add(Character.toString(symbolFirst) + number + symbolTwo + symbolThree + region);
+            }
             //System.out.println(numberAuto);
+            //System.out.println(symbolFirst);
         }
         return numberAuto;
     }
