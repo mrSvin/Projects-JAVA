@@ -56,7 +56,7 @@ public class CoolNumbers {
         }
         long end = System.nanoTime();
         long time = end-begin;
-        System.out.println("Время бинарного поиска: " + time);
+        System.out.println("Время поиска: " + time);
         return check;
     }
 
@@ -66,7 +66,7 @@ public class CoolNumbers {
         hashSet.contains(number);
         long end = System.nanoTime();
         long time = end-begin;
-        System.out.println("Время бинарного поиска: " + time);
+        System.out.println("Время поиска: " + time);
 
         return hashSet.contains(number);
     }
@@ -77,7 +77,7 @@ public class CoolNumbers {
         treeSet.contains(number);
         long end = System.nanoTime();
         long time = end-begin;
-        System.out.println("Время бинарного поиска: " + time);
+        System.out.println("Время поиска: " + time);
 
         return treeSet.contains(number);
     }
