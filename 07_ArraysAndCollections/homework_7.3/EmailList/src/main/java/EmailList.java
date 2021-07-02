@@ -22,6 +22,8 @@ public class EmailList {
         }
         if (checkOne > 0 && checkTwo > 0 && checkDuplicate == 0) {
             emailList.add(email);
+        } else {
+            System.out.println(Main.WRONG_EMAIL_ANSWER);
         }
 
 
@@ -29,9 +31,10 @@ public class EmailList {
 
     public List<String> getSortedEmails() {
         // TODO: возвращается список электронных адресов в алфавитном порядке
-
         Collections.sort(emailList);
-        System.out.println(emailList);
+        for (int i=0; i<emailList.size(); i++) {
+            System.out.println(emailList.get(i));
+        }
         return emailList;
     }
 

@@ -20,18 +20,38 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
+        emailList = new EmailList();
+
+        String command;
+        String text;
+
         while (true) {
+
             String input = scanner.nextLine();
             if (input.equals("0")) {
                 break;
             }
 
             //TODO: write code here
-            emailList = new EmailList();
-            emailList.add("input@dsd.ru");
-            emailList.add(input);
+
+            int endStringCommand = input.indexOf(' ');
+            //int lengthCommandText=commandText.length();
+            if (endStringCommand > 0) {
+                command = input.substring(0, endStringCommand);
+                text = input.substring(endStringCommand + 1, input.length());
+            } else {
+                command = input.substring(0, input.length());
+                text = "";
+            }
+
+            if (command.equals("ADD")) {
+            emailList.add(text);
+            }
+            if (command.equals("LIST")) {
             emailList.getSortedEmails();
+            }
+
             
         }
     }

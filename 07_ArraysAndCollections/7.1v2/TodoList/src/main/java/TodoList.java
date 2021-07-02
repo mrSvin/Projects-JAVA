@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class TodoList {
 
-    public ArrayList<String> getArrayList() {
-        return arrayList;
-    }
+        public ArrayList<String> getArrayList() {
+            return arrayList;
+        }
 
     public ArrayList<String> arrayList = new ArrayList<>();
 
