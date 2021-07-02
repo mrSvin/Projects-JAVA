@@ -13,19 +13,19 @@ public class CoolNumbers {
 
 
         for (int i = 0; i < 20000001; i++) {
-            int number =(int) (Math.random() * 999);
+            int number =(int) (Math.random() * 9);
             int region = 1 + (int) (Math.random() * 198);
             char symbolFirst = dict.charAt((int) (Math.random() * 12));
             char symbolTwo = dict.charAt((int) (Math.random() * 12));
             char symbolThree = dict.charAt((int) (Math.random() * 12));
 
             if (region<10) {
-                numberAuto.add(Character.toString(symbolFirst) + number + symbolTwo + symbolThree + "0" + region);
+                numberAuto.add(Character.toString(symbolFirst) + number+ number+ number + symbolTwo + symbolThree + "0" + region);
             } else  {
-                numberAuto.add(Character.toString(symbolFirst) + number + symbolTwo + symbolThree + region);
+                numberAuto.add(Character.toString(symbolFirst) + number+ number+ number + symbolTwo + symbolThree + region);
             }
             //System.out.println(numberAuto);
-            //System.out.println(symbolFirst);
+
         }
         return numberAuto;
     }
