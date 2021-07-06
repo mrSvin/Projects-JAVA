@@ -31,6 +31,8 @@ public class Main {
 
             System.out.println("Длительность: " +
                     RouteCalculator.calculateDuration(route) + " минут");
+
+            System.out.println("sdasd " + route);
         }
     }
 

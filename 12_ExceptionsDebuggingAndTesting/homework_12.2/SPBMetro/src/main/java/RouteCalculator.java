@@ -26,7 +26,9 @@ public class RouteCalculator {
             return route;
         }
 
+
         route = getRouteWithTwoConnections(from, to);
+
         return route;
     }
 
