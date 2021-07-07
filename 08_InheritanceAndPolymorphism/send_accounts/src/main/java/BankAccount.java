@@ -20,15 +20,17 @@ public class BankAccount {
     }
 
     public void take(double amountToTake) {
-        if (amountToTake < account) {
+        if (amountToTake < getAmount()) {
             account = account - amountToTake;
+        } else {
+            System.out.println("Недостаточно средств");
         }
 
     }
 
     boolean send(BankAccount receiver, double amount) {
         boolean send = false;
-        Main.bank.take(amount);
+        this.take(amount);
         receiver.put(amount);
 
         System.out.println("Отправляемая сумма " + amount);
