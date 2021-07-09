@@ -8,62 +8,53 @@ public class Main {
     public static void main(String[] args) {
 
         Company company = new Company();
-//        TopManager topManager = new TopManager();
-//        Operator operator = new Operator();
-//        Manager manager = new Manager();
-//        Employee topManagerEmp = new TopManager();
-//        Employee operatorEmp = new Operator();
-//        Employee managerEmp = new Manager();
+
+        List<Employee> workers = new ArrayList<>();
 
 
-        company.hire("Топ1", "topManagers");
-        company.hire("Топ2", "topManagers");
-        company.hire("Топ3", "topManagers");
-
-        company.hire("Упр1", "managers");
-        company.hire("Упр2", "managers");
-        company.hire("Упр3", "managers");
-
-        company.hire("Оп1", "operators");
-        company.hire("Оп2", "operators");
-        company.hire("Оп3", "operators");
-
-        ArrayList<String> personsTop = new ArrayList<>();
-        for (int i = 4; i < 11; i++) {
-            personsTop.add("Топ" + i);
+        for (int i = 0; i < 180; i++) {
+            company.hire(new Operator());
+            System.out.println("Устроился оператор " + (i + 1));
         }
-        company.hireAll(personsTop, "topManagers");
-
-        ArrayList<String> personsManager = new ArrayList<>();
-        for (int i = 4; i < 81; i++) {
-            personsManager.add("Упр" + i);
+        for (int i = 0; i < 80; i++) {
+            company.hire(new Manager());
+            System.out.println("Устроился менеджер " + (i + 1));
         }
-        company.hireAll(personsManager, "managers");
-
-        ArrayList<String> personsOperators = new ArrayList<>();
-        for (int i = 4; i < 181; i++) {
-            personsOperators.add("Оп" + i);
+        for (int i = 0; i < 10; i++) {
+            company.hire(new TopManager());
+            System.out.println("Устроился Топ менеджер " + (i + 1));
         }
-        company.hireAll(personsOperators, "operators");
-
-        //company.fire("Топ3", "topManagers");
+        company.hireAll(workers);
 
 
-        List<Integer> getLowestSalaryStaff = company.getLowestSalaryStaff(30);
-        List<Integer> getTopSalaryStaff = company.getTopSalaryStaff(15);
-
-        for (int i = 1; i < 6; i++) {
-            company.fire("Топ" + i, "topManagers");
+        List<Employee> getLowSalaryStaff = company.getLowestSalaryStaff(30);
+        System.out.println("Самые низкие зарплаты по возрастанию:");
+        for (Employee e : getLowSalaryStaff) {
+            System.out.println(e.getMonthSolary());
         }
-        for (int i = 1; i < 41; i++) {
-            company.fire("Упр" + i, "managers");
-        }
-        for (int i = 1; i < 91; i++) {
-            company.fire("Оп" + i, "operators");
+        List<Employee> getTopSalaryStaff = company.getTopSalaryStaff(15);
+        System.out.println("Самые высокие зарплаты по убыванию:");
+        for (Employee e : getTopSalaryStaff) {
+            System.out.println(e.getMonthSolary());
         }
 
-        company.getLowestSalaryStaff(30);
-        company.getTopSalaryStaff(15);
+        //System.out.println(company.employees.size());
+        System.out.println("Уволены 50% сотрудников");
+        int sizeList = company.employees.size() / 2;
+        for (int i = 0; i < sizeList; i++) {
+            //company.fire(company.employees.get(i));
+        }
+        System.out.println(company.employees.size());
+
+        System.out.println("Самые высокие зарплаты после увольнения по убыванию:");
+        for (Employee e : company.getLowestSalaryStaff(15)) {
+            System.out.println(e.getMonthSolary());
+        }
+
+        System.out.println("Самые низкие зарплаты после увольнения по возрастанию:");
+        for (Employee e : company.getTopSalaryStaff(30)) {
+            System.out.println(e.getMonthSolary());
+        }
 
 
     }

@@ -5,7 +5,6 @@ public class Main {
         BankAccount bank = new BankAccount();
         BankAccount receiver = new BankAccount();
         operations(bank, receiver);
-
     }
 
     private static void operations(BankAccount bank, BankAccount receiver) {
