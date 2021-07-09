@@ -1,8 +1,9 @@
 public abstract class Client {
 
-    double account = 0;
+    protected double account = 0;
 
     public double getAmount() {
+        System.out.println(account);
         return account;
     }
 
