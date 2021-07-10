@@ -14,6 +14,9 @@ public class Main {
         CustomerStorage executor = new CustomerStorage();
 
         while (true) {
+            try {
+
+
             String command = scanner.nextLine();
             String[] tokens = command.split("\\s+", 2);
             if (tokens[0].equals("add")) {
@@ -28,6 +31,9 @@ public class Main {
                 System.out.println(helpText);
             } else {
                 System.out.println(COMMAND_ERROR);
+            }
+            } catch (IndexOutOfBoundsException exception) {
+                System.out.println( exception.getMessage());
             }
         }
     }
