@@ -12,11 +12,13 @@ public class Company implements Comparator<Employee> {
 
 
     public void hire(Employee employee) {
+
         employees.add(employee);
     }
 
 
     public void hireAll(List<Employee> employees) {
+
         for (Employee e : employees) {
             hire(e);
         }
@@ -48,6 +50,6 @@ public class Company implements Comparator<Employee> {
 
     @Override
     public int compare(Employee o1, Employee o2) {
-        return 0;
+        return Integer.compare(o1.getMonthSolary(),o2.getMonthSolary());
     }
 }
