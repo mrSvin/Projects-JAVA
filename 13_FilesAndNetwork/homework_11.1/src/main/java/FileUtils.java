@@ -1,7 +1,7 @@
 import java.io.File;
 import java.text.DecimalFormat;
 
-
+//For new commit
 public class FileUtils {
 
     public static long calculateFolderSize(String path) {
