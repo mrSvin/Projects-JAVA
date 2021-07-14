@@ -10,14 +10,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-
+//For new commit
     public static String jsonOut;
 
     public static void main(String[] args) throws IOException {
         jsonOut = "{ \n \"stations\": {";
         LineParser();
         jsonOut = jsonOut + "\n}";
-        FileWriter file = new FileWriter("D:\\VasilievAV\\Desktop\\test\\outJSON.json");
+        FileWriter file = new FileWriter("C:\\Users\\Home\\Desktop\\test\\outJSON.json");
         file.write(jsonOut);
         file.close();
 
