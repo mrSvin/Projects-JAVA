@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
+//For new commit
 public class Movements {
 
     public ArrayList<Double> income = new ArrayList<Double>();

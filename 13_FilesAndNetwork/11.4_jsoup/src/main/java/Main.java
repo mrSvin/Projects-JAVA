@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
-
+//For new commit
     public static void main(String[] args) {
         ImageParser();
     }
@@ -37,7 +37,7 @@ public class Main {
                 Connection.Response resultImageResponse = Jsoup.connect(src)
                         .ignoreContentType(true).execute();
 
-                FileOutputStream out = (new FileOutputStream(new java.io.File("D:\\VasilievAV\\Desktop\\test\\" + name + ".jpg")));
+                FileOutputStream out = (new FileOutputStream(new java.io.File("C:\\Users\\Home\\Desktop\\test\\" + name + ".jpg")));
                 out.write(resultImageResponse.bodyAsBytes());
                 out.close();
 
