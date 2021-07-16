@@ -3,7 +3,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
-
+//for new commit
 @Entity
 @Table(name = "courses")
 public class Course {

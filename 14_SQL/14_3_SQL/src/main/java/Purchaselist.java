@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
-
+//for new commit
 @Data
 @Entity
 @Table(name = "purchaselist")

@@ -1,5 +1,5 @@
 import javax.persistence.*;
-
+//for new commit
 @Entity
 @Table(name = "teachers")
 public class Teacher {
