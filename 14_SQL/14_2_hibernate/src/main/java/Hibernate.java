@@ -7,18 +7,23 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class Hibernate {
 
-    public Session HibernateOperations() {
+    private Session session;
+    private SessionFactory sessionFactory;
+
+    public Session HibernateOpenSession() {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-        Session session = sessionFactory.openSession();
-        //Course course = session.get(Course.class, 2);
-        Course course = session.get(Course.class, 4);
-        System.out.println("Название курса: " + course.getName() + " количество студентов: " + course.getStudentsCount());
-
-        sessionFactory.close();
-
+        sessionFactory = metadata.getSessionFactoryBuilder().build();
+        session = sessionFactory.openSession();
         return  session;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 
 }
