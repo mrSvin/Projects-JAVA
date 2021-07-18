@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
 import java.io.File;
 
-
+//for new commit
 public class Main {
     private static String dstFolder;
 
