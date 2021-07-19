@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-
+//For new commit
 public class MethodsTest extends TestCase {
 
     public void testgetBalance() {
