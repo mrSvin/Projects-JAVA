@@ -29,32 +29,46 @@ public class Bank {
     public String transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
         //boolean security = false;
         new Thread(() -> {
-            try {
-                if (amount > 50_000) {
-                    isFraud(fromAccountNum, toAccountNum, amount);
-                }
-                if (accountsBank.get(fromAccountNum) > 0 && accountsBank.get(toAccountNum) > 0) {
-                    if (accountsBank.get(fromAccountNum) >= amount) {
+            //System.out.println("Количество потоков: " + java.lang.Thread.activeCount());
+            if (java.lang.Thread.activeCount()<10) {
+                try {
+                    if (amount > 50_000) {
+                        isFraud(fromAccountNum, toAccountNum, amount);
+                    }
+                    if (accountsBank.get(fromAccountNum) > 0 && accountsBank.get(toAccountNum) > 0) {
+                        if (accountsBank.get(fromAccountNum) >= amount) {
 
-                        //Убавляем деньги
-                        synchronized (fromAccountNum) {
-                            long takeMoney = accountsBank.get(fromAccountNum) - amount;
-                            accountsBank.put(fromAccountNum, takeMoney);
-                        }
-                        //Добавляем деньги
-                        synchronized (toAccountNum) {
-                            long putMoney = accountsBank.get(toAccountNum) + amount;
-                            accountsBank.put(toAccountNum, putMoney);
-                        }
+                            //Убавляем деньги
+                            if (accountsBank.get(fromAccountNum) < accountsBank.get(toAccountNum)) {
+                                synchronized (accountsBank.get(fromAccountNum)) {
+                                    synchronized (accountsBank.get(toAccountNum)) {
+                                        long takeMoney = accountsBank.get(fromAccountNum) - amount;
+                                        accountsBank.put(fromAccountNum, takeMoney);
+                                        long putMoney = accountsBank.get(toAccountNum) + amount;
+                                        accountsBank.put(toAccountNum, putMoney);
+                                    }
+                                }
+                            } else {
+                                synchronized (accountsBank.get(fromAccountNum)) {
+                                    synchronized (accountsBank.get(toAccountNum)) {
+                                        long takeMoney = accountsBank.get(fromAccountNum) - amount;
+                                        accountsBank.put(fromAccountNum, takeMoney);
+                                        long putMoney = accountsBank.get(toAccountNum) + amount;
+                                        accountsBank.put(toAccountNum, putMoney);
+                                    }
+                                }
+                            }
+
 
                             System.out.println("Отправлены " + amount + " со счета: " + fromAccountNum + ", на счет: " + toAccountNum);
 
+                        }
+                    } else {
+                        System.out.println("Перевод отменен по причине блокировки одного из аккаунтов!");
                     }
-                } else {
-                    System.out.println("Перевод отменен по причине блокировки одного из аккаунтов!");
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
-            } catch (Exception ex) {
-                ex.printStackTrace();
             }
         }).start();
         return String.valueOf(accountsBank.get(fromAccountNum)) + " " + accountsBank.get(toAccountNum);
