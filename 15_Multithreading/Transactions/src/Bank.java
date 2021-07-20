@@ -1,6 +1,9 @@
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 //For new commit
 public class Bank {
 
@@ -20,57 +23,70 @@ public class Bank {
         return random.nextBoolean();
     }
 
+
     /**
      * TODO: реализовать метод. Метод переводит деньги между счетами. Если сумма транзакции > 50000,
      * то после совершения транзакции, она отправляется на проверку Службе Безопасности – вызывается
      * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше
      * усмотрение)+++++++++++++++++++
      */
-    public String transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
+    public String transfer(String fromAccountNum, String toAccountNum, long amount) {
         //boolean security = false;
-        new Thread(() -> {
-            //System.out.println("Количество потоков: " + java.lang.Thread.activeCount());
-            if (java.lang.Thread.activeCount()<10) {
-                try {
-                    if (amount > 50_000) {
-                        isFraud(fromAccountNum, toAccountNum, amount);
-                    }
-                    if (accountsBank.get(fromAccountNum) > 0 && accountsBank.get(toAccountNum) > 0) {
-                        if (accountsBank.get(fromAccountNum) >= amount) {
+        //new Thread(() -> {
+        System.out.println("Количество потоков: " + java.lang.Thread.activeCount());
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.submit(() -> {
+            Boolean complitePotok = false;
+            try {
+                if (amount > 50_000) {
+                    isFraud(fromAccountNum, toAccountNum, amount);
+                }
+                if (accountsBank.get(fromAccountNum) > 0 && accountsBank.get(toAccountNum) > 0) {
+                    if (accountsBank.get(fromAccountNum) >= amount) {
 
-                            //Убавляем деньги
-                            if (accountsBank.get(fromAccountNum) < accountsBank.get(toAccountNum)) {
-                                synchronized (accountsBank.get(fromAccountNum)) {
-                                    synchronized (accountsBank.get(toAccountNum)) {
-                                        long takeMoney = accountsBank.get(fromAccountNum) - amount;
-                                        accountsBank.put(fromAccountNum, takeMoney);
-                                        long putMoney = accountsBank.get(toAccountNum) + amount;
-                                        accountsBank.put(toAccountNum, putMoney);
-                                    }
-                                }
-                            } else {
-                                synchronized (accountsBank.get(fromAccountNum)) {
-                                    synchronized (accountsBank.get(toAccountNum)) {
-                                        long takeMoney = accountsBank.get(fromAccountNum) - amount;
-                                        accountsBank.put(fromAccountNum, takeMoney);
-                                        long putMoney = accountsBank.get(toAccountNum) + amount;
-                                        accountsBank.put(toAccountNum, putMoney);
-                                    }
+                        //Убавляем деньги
+                        if (accountsBank.get(fromAccountNum) < accountsBank.get(toAccountNum)) {
+                            synchronized (accountsBank.get(fromAccountNum)) {
+                                synchronized (accountsBank.get(toAccountNum)) {
+                                    long takeMoney = accountsBank.get(fromAccountNum) - amount;
+                                    accountsBank.put(fromAccountNum, takeMoney);
+                                    long putMoney = accountsBank.get(toAccountNum) + amount;
+                                    accountsBank.put(toAccountNum, putMoney);
+                                    //complitePotok =true;
+                                    executor.shutdownNow();
                                 }
                             }
-
-
-                            System.out.println("Отправлены " + amount + " со счета: " + fromAccountNum + ", на счет: " + toAccountNum);
-
+                        } else {
+                            synchronized (accountsBank.get(fromAccountNum)) {
+                                synchronized (accountsBank.get(toAccountNum)) {
+                                    long takeMoney = accountsBank.get(fromAccountNum) - amount;
+                                    accountsBank.put(fromAccountNum, takeMoney);
+                                    long putMoney = accountsBank.get(toAccountNum) + amount;
+                                    accountsBank.put(toAccountNum, putMoney);
+                                    //complitePotok =true;
+                                    executor.shutdownNow();
+                                }
+                            }
                         }
-                    } else {
-                        System.out.println("Перевод отменен по причине блокировки одного из аккаунтов!");
+
+
+                        System.out.println("Отправлены " + amount + " со счета: " + fromAccountNum + ", на счет: " + toAccountNum);
+
                     }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+                } else {
+                    System.out.println("Перевод отменен по причине блокировки одного из аккаунтов!");
+                    //complitePotok =true;
+                    executor.shutdownNow();
                 }
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-        }).start();
+//            if (complitePotok==true) {
+//                executor.shutdownNow();
+//            }
+        });
+
+        // }).start();
         return String.valueOf(accountsBank.get(fromAccountNum)) + " " + accountsBank.get(toAccountNum);
     }
 
