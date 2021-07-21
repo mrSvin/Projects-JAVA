@@ -9,6 +9,7 @@ public class Bank {
 
     public TreeMap<String, Long> accountsBank = new TreeMap<>();
     private final Random random = new Random();
+    private static final Object tieLock = new Object();
 
     public synchronized boolean isFraud(String fromAccountNum, String toAccountNum, long amount)
             throws InterruptedException {
@@ -30,41 +31,48 @@ public class Bank {
      * метод isFraud. Если возвращается true, то делается блокировка счетов (как – на ваше
      * усмотрение)+++++++++++++++++++
      */
+    public void transferDo (String fromAccountNum, String toAccountNum, long amount) {
+        synchronized (accountsBank.get(fromAccountNum)) {
+            synchronized (accountsBank.get(toAccountNum)) {
+                long takeMoney = accountsBank.get(fromAccountNum) - amount;
+                accountsBank.put(fromAccountNum, takeMoney);
+                long putMoney = accountsBank.get(toAccountNum) + amount;
+                accountsBank.put(toAccountNum, putMoney);
+                //complitePotok =true;
+            }
+        }
+    }
+
     public String transfer(String fromAccountNum, String toAccountNum, long amount) {
         //boolean security = false;
         //new Thread(() -> {
         System.out.println("Количество потоков: " + java.lang.Thread.activeCount());
         ExecutorService executor = Executors.newCachedThreadPool();
         executor.submit(() -> {
-            Boolean complitePotok = false;
+            //Boolean complitePotok = false;
             try {
                 if (amount > 50_000) {
                     isFraud(fromAccountNum, toAccountNum, amount);
                 }
                 if (accountsBank.get(fromAccountNum) > 0 && accountsBank.get(toAccountNum) > 0) {
+                    int fromHash = System.identityHashCode(accountsBank.get(fromAccountNum));
+                    int toHash = System.identityHashCode(accountsBank.get(toAccountNum));
+
                     if (accountsBank.get(fromAccountNum) >= amount) {
 
-                        //Убавляем деньги
-                        if (accountsBank.get(fromAccountNum) < accountsBank.get(toAccountNum)) {
-                            synchronized (accountsBank.get(fromAccountNum)) {
-                                synchronized (accountsBank.get(toAccountNum)) {
-                                    long takeMoney = accountsBank.get(fromAccountNum) - amount;
-                                    accountsBank.put(fromAccountNum, takeMoney);
-                                    long putMoney = accountsBank.get(toAccountNum) + amount;
-                                    accountsBank.put(toAccountNum, putMoney);
-                                    //complitePotok =true;
-                                    executor.shutdownNow();
-                                }
-                            }
+                        if (fromHash < toHash) {
+                            transferDo(fromAccountNum, toAccountNum, amount);
+                            executor.shutdownNow();
+                        } else if (fromHash > toHash) {
+                            transferDo(fromAccountNum, toAccountNum, amount);
+                            executor.shutdownNow();
                         } else {
-                            synchronized (accountsBank.get(fromAccountNum)) {
-                                synchronized (accountsBank.get(toAccountNum)) {
-                                    long takeMoney = accountsBank.get(fromAccountNum) - amount;
-                                    accountsBank.put(fromAccountNum, takeMoney);
-                                    long putMoney = accountsBank.get(toAccountNum) + amount;
-                                    accountsBank.put(toAccountNum, putMoney);
-                                    //complitePotok =true;
-                                    executor.shutdownNow();
+                            synchronized (tieLock) {
+                                synchronized (accountsBank.get(fromAccountNum)) {
+                                    synchronized ( accountsBank.get(toAccountNum)) {
+                                        transferDo(fromAccountNum, toAccountNum, amount);
+                                        executor.shutdownNow();
+                                    }
                                 }
                             }
                         }
