@@ -15,6 +15,7 @@ public class Purchaselist {
     @Column(name = "student_name", insertable = false, updatable = false)
     private int student_name;
 
+
     @Column(name = "course_name", insertable = false, updatable = false)
     private int course_name;
 
@@ -31,6 +32,14 @@ public class Purchaselist {
         @Column(columnDefinition = "course_name")
         private String course_name;
 
+    }
+
+    public int getStudent_name() {
+        return student_name;
+    }
+
+    public int getCourse_name() {
+        return course_name;
     }
 
 
