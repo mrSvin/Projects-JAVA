@@ -11,39 +11,54 @@ import java.util.Date;
 @Table(name = "linkedpurchaselist")
 public class LinkedPurchaseList {
 
+
+    public void setId(Key id) {
+        this.id = id;
+    }
+
     @EmbeddedId
     private Key id;
 
-    public LinkedPurchaseList(Student student, Course course) {
+    public LinkedPurchaseList() {
         this.id = new Key(student, course);
     }
 
+    @Column(name = "student_id", insertable = false, updatable = false)
+    private int student;
 
-//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "student_id", insertable = false, updatable = false)
-//    private Student student;
-////
-//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "course_id", insertable = false, updatable = false)
-//    private Course course;
-//
-//
+    public void setStudent(int student) {
+        this.student = student;
+    }
 
-    @NoArgsConstructor
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
+    @Column(name = "course_id", insertable = false, updatable = false)
+    private int course;
+
+
+
     @Embeddable
     @Data
     public static class Key implements Serializable {
-        @ManyToOne
-        @JoinColumn(columnDefinition = "student_id")
-        private Student student;
 
-        @ManyToOne
-        @JoinColumn(columnDefinition = "course_id")
-        private Course course;
 
-        public Key(Student student, Course course) {
-            this.course = course;
-            this.student = student;
+        @Column(name = "student_id", insertable = false, updatable = false)
+        private int student;
+
+        @Column(name = "course_id", insertable = false, updatable = false)
+        private int course;
+
+//        @JoinColumn(columnDefinition = "student_id")
+//        private int student_id;
+//
+//        @JoinColumn(columnDefinition = "course_id")
+//        private int course_id;
+
+        public Key(int student_id, int course_id) {
+            this.course = course_id;
+            this.student = student_id;
         }
     }
 

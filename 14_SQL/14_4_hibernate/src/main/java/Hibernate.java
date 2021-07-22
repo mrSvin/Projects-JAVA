@@ -5,8 +5,10 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 
-import javax.persistence.Query;
+
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,18 +57,99 @@ public class Hibernate {
 //            System.out.println(subscription.getCourse().getName() + " - " + subscription.getStudent().getName());
 //        }
 
+//        Transaction transaction = session.beginTransaction();
+//        String sql = "INSERT INTO skillbox.linkedpurchaselist(`student_id`, `course_id`) " +
+//                "SELECT " +
+//                "skillbox.students.id, " +
+//                "skillbox.courses.id " +
+//                "FROM skillbox.purchaselist " +
+//                "JOIN skillbox.courses ON skillbox.courses.name=skillbox.purchaselist.course_name " +
+//                "JOIN skillbox.students ON skillbox.students.name=skillbox.purchaselist.student_name";
+//        Query query = session.createSQLQuery(sql).addEntity(LinkedPurchaseList.class);
+//        query.executeUpdate();
+//        transaction.commit();
+//        session.close();
+
+//        Transaction transaction = session.beginTransaction();
+//        String sql ="SELECT " +
+//                "skillbox.students.id , " +
+//                "skillbox.courses.id  " +
+//                "FROM skillbox.purchaselist " +
+//                "JOIN skillbox.courses ON skillbox.courses.name=skillbox.purchaselist.course_name " +
+//                "JOIN skillbox.students ON skillbox.students.name=skillbox.purchaselist.student_name";
+//        Query query = session.createSQLQuery(sql).addEntity(LinkedPurchaseList.class);
+//        query.executeUpdate();
+//        transaction.commit();
+//        session.close();
+
         Transaction transaction = session.beginTransaction();
-        String sql = "INSERT INTO skillbox.linkedpurchaselist(`student_id`, `course_id`) " +
-                "SELECT " +
-                "skillbox.students.id as students_id, " +
-                "skillbox.courses.id as course_id " +
+        String sql ="SELECT " +
+                "skillbox.students.id as sdasd, " +
+                "skillbox.courses.id as asdasdd " +
                 "FROM skillbox.purchaselist " +
                 "JOIN skillbox.courses ON skillbox.courses.name=skillbox.purchaselist.course_name " +
                 "JOIN skillbox.students ON skillbox.students.name=skillbox.purchaselist.student_name";
-        Query query = session.createSQLQuery(sql).addEntity(LinkedPurchaseList.class);
-        query.executeUpdate();
+        Query query = session.createSQLQuery(sql);
+
+        List<Object[]> rows = query.list();
+
+        for(Object[] row : rows) {
+            LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList();
+//            int x =  ((Integer) row[0]);
+//            int y =  ((Integer) row[1]);
+//            System.out.println( x + " " + y);
+            linkedPurchaseList.setId(new LinkedPurchaseList.Key(((Integer) row[0]),((Integer) row[1])));
+            session.save(linkedPurchaseList);
+
+        }
+
+
+//        Transaction transaction = session.beginTransaction();
+//
+//        Course course = new Course();
+//        Student student = new Student();
+//
+//        String hql = "From " + Purchaselist.class.getSimpleName();
+//        List<Purchaselist> purchaselists = session.createQuery(hql).list();
+//        for (Iterator<Purchaselist> it = purchaselists.iterator(); it.hasNext();) {
+//            Purchaselist purchaselist = it.next();
+//            System.out.println(purchaselist.getStudent_name() + " " + purchaselist.getCourse_name());
+//        }
+
         transaction.commit();
         session.close();
+
+
+
+
+//        for (Purchaselist purchaselist : data) {
+//            System.out.println(purchaselist.getName();
+//        }
+
+//        Transaction transaction = session.beginTransaction();
+//        LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList();
+//        linkedPurchaseList.setId(new LinkedPurchaseList.Key(3,2));
+//        session.save(linkedPurchaseList);
+//        transaction.commit();
+//        sessionFactory.close();
+
+
+//        String hql = "From " + Purchaselist.class.getSimpleName();
+//        List<Purchaselist> purchaselists = session.createQuery(hql).list();
+
+//        purchaselists.forEach((p) -> {
+//            Query queryStudent = session.createQuery("from Student where name = :name");
+//            queryStudent.setParameter("name", p.getStudent_name());
+//            Student student = (Student) queryStudent.getSingleResult();
+//
+//            Query queryCourse = session.createQuery("from Course where name = :name");
+//            queryCourse.setParameter("name", p.getCourse_name());
+//            Course course = (Course) queryCourse.getSingleResult();
+//
+//            LinkedPurchaseList linkedPurchas=new LinkedPurchaseList();
+//
+//
+//        });
 
 
 //        Transaction transaction = session.beginTransaction();
@@ -81,8 +164,9 @@ public class Hibernate {
 //        Student student = new Student();
 //
 //        LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList();
-//        linkedPurchaseList.setCourseId(course.getId());
-//        linkedPurchaseList.setCourseId(student.getId());
+//        linkedPurchaseList.setId(new LinkedPurchaseList.Key());
+//        linkedPurchaseList.setCourse(course.getId());
+//        linkedPurchaseList.setStudent(student.getId());
 //        session.save(linkedPurchaseList);
 
 //        String hql = "From " + LinkedPurchaseList.class.getSimpleName();
@@ -95,7 +179,7 @@ public class Hibernate {
 
         sessionFactory.close();
 
-        return  session;
+        return session;
     }
 
 }
