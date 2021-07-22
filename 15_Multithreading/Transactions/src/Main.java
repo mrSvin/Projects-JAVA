@@ -2,6 +2,7 @@
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
+       // ExecutorService service = Executors.newFixedThreadPool(10);
         Bank bank = new Bank();
         //Дрбавляем клиентов в базу и открываем им счет
         bank.addAccount("Пумба", 234_000);
@@ -17,7 +18,7 @@ public class Main {
         bank.getBalance("Пятачок");
         bank.getSumAllAccounts();
         //Проверяем метод поиска мошенников
-        bank.transfer("Пумба", "Пятачок", 59_000);
+        //bank.transfer("Пумба", "Пятачок", 59_000);
         //Проверяем блокировку перевода при заблокированном аккауете
         bank.transfer("Пятачок", "Пумба", 19_000);
         //Проверяем корректность работы многопоточности
@@ -25,7 +26,7 @@ public class Main {
             bank.transfer("Пумба", "Пятачок", 1);
             bank.transfer("Пятачок", "Пумба", 1);
         }
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         bank.getBalance("Пумба");
         bank.getBalance("Пятачок");
         bank.getSumAllAccounts();

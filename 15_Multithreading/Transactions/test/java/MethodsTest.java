@@ -36,7 +36,7 @@ public class MethodsTest extends TestCase {
         Bank bank = new Bank();
         bank.addAccount("Пумба", 500_000);
         bank.addAccount("Пятачок", 500_000);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             bank.isFraud("Пумба", "Пятачок", 50000);
             bank.isFraud("Пятачок", "Пумба", 50000);
         }
