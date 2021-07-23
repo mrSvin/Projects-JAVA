@@ -986,56 +986,52 @@
       <RefTableName>teachers</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="304" parent="287" name="student_id">
+    <column id="304" parent="287" name="course_id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="287" name="course_id">
+    <column id="305" parent="287" name="student_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="306" parent="287" name="FKhdiqfpdibi7uol08ec010ispr">
-      <ColNames>student_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="307" parent="287" name="PRIMARY">
+    <key id="306" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>course_id
 student_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="308" parent="288" name="student_name">
+    <column id="307" parent="288" name="student_name">
       <Position>1</Position>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="288" name="course_name">
+    <column id="308" parent="288" name="course_name">
       <Position>2</Position>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="288" name="price">
+    <column id="309" parent="288" name="price">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="288" name="subscription_date">
+    <column id="310" parent="288" name="subscription_date">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="289" name="id">
+    <column id="311" parent="289" name="id">
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="289" name="name">
+    <column id="312" parent="289" name="name">
       <Position>2</Position>
       <Comment> </Comment>
       <DataType>varchar(45)|0s</DataType>
@@ -1043,75 +1039,75 @@ student_id</ColNames>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="314" parent="289" name="age">
+    <column id="313" parent="289" name="age">
       <Position>3</Position>
       <Comment> </Comment>
       <DataType>int unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="289" name="registration_date">
+    <column id="314" parent="289" name="registration_date">
       <Position>4</Position>
       <Comment> </Comment>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="316" parent="289" name="PRIMARY">
+    <key id="315" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="317" parent="290" name="student_id">
+    <column id="316" parent="290" name="student_id">
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="290" name="course_id">
+    <column id="317" parent="290" name="course_id">
       <Position>2</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="290" name="subscription_date">
+    <column id="318" parent="290" name="subscription_date">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="320" parent="290" name="unq">
+    <index id="319" parent="290" name="unq">
       <ColNames>student_id
 course_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="321" parent="290" name="course_idx">
+    <index id="320" parent="290" name="course_idx">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="290" name="unq">
+    <key id="321" parent="290" name="unq">
       <ColNames>student_id
 course_id</ColNames>
       <UnderlyingIndexName>unq</UnderlyingIndexName>
     </key>
-    <foreign-key id="323" parent="290" name="student">
+    <foreign-key id="322" parent="290" name="student">
       <ColNames>student_id</ColNames>
       <RefTableName>students</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="324" parent="290" name="course">
+    <foreign-key id="323" parent="290" name="course">
       <ColNames>course_id</ColNames>
       <RefTableName>courses</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="325" parent="291" name="id">
+    <column id="324" parent="291" name="id">
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="291" name="name">
+    <column id="325" parent="291" name="name">
       <Position>2</Position>
       <Comment>  
 </Comment>
@@ -1120,19 +1116,19 @@ course_id</ColNames>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="327" parent="291" name="salary">
+    <column id="326" parent="291" name="salary">
       <Position>3</Position>
       <Comment>  </Comment>
       <DataType>int unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="291" name="age">
+    <column id="327" parent="291" name="age">
       <Position>4</Position>
       <Comment> </Comment>
       <DataType>int unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="329" parent="291" name="PRIMARY">
+    <key id="328" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
