@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <script src="/js/jquery-3.4.0.min.js"></script>
+     <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+<div id="add-form">
+    <form action="#" th:action="@{/add}" th:object="${todocontent}" method="post">
+        <h2>Добавление дела</h2>
+        <label>Введите дело:</label>
+        <input type="text" th:field="*{content}"/>
+        <hr>
+        <button id="save-book">Сохранить</button>
+    </form>
+</div>
+<div id="update-form">
+    <form action="#" th:action="@{/update}" th:object="${todocontent}" method="post">
+        <h2>Обновление дела</h2>
+        <label>Введите дело:</label>
+        <input type="text" th:field="*{contentUpdate}"/>
+        <label>Введите номер:</label>
+        <input type="text" th:field="*{numberUpdate}"/>
+        <hr>
+        <button id="update-book">Обновить</button>
+    </form>
+</div>
+<div id="delete-form">
+    <form action="#" th:action="@{/delete}" th:object="${todocontent}" method="post">
+        <h2>Удаление дела</h2>
+        <label>Введите номер:</label>
+        <input type="text" th:field="*{numberDelete}"/>
+        <hr>
+        <button id="delete-book">Удалить</button>
+    </form>
+</div>
+
+
+<h1>Список дел (<span th:text="${booksCount}">0</span>)</h1>
+<button id="show-add-add-form">Добавить дело</button>
+<button id="show-update-update-form">Обновить дело</button>
+<button id="show-delete-form">Удалить дело</button>
+<br /><br />
+<div>
+    <form action="#" th:action="@{/deleteall}" th:object="${todocontent}" method="post">
+        <button>Удалить все</button>
+    </form>
+</div>
+
+</div>
+
+<p th:utext="${someParameter}"></p>
+</body>
+
+</html>
