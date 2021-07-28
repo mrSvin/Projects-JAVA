@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-
+//for new commit
 @Controller
 public class DefaultController {
 
@@ -37,4 +37,5 @@ public class DefaultController {
 
         return "index";
     }
+    //for new commit
 }
