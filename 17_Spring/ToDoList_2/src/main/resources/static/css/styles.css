@@ -2,7 +2,7 @@
     font-family: Arial;
 }
 
-#add-form {
+#book-form {
     display: none;
     align-items: center;
     justify-content: center;
@@ -15,89 +15,24 @@
     background-color: #88888878;
 }
 
-#add-form form {
+#book-form form {
     background-color: white;
     border: 1px solid #333;
     width: 300px;
     padding: 20px;
 }
 
-#add-form h2 {
+#book-form h2 {
     margin-top: 0;
 }
 
-#add-form label {
+#book-form label {
     display: block;
 }
 
-#add-form form > * {
+#book-form form > * {
     margin-bottom: 5px;
 }
-
-#update-form {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: #88888878;
-}
-
-#update-form form {
-    background-color: white;
-    border: 20px solid #ffffff;
-    width: 300px;
-    pupdateing: 20px;
-}
-
-#update-form h2 {
-    margin-top: 0;
-}
-
-#update-form label {
-    display: block;
-}
-
-#update-form form > * {
-    margin-bottom: 5px;
-}
-
-#delete-form {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: #88888878;
-}
-
-#delete-form form {
-    background-color: white;
-    border: 20px solid #ffffff;
-    width: 300px;
-    pdeleteing: 20px;
-}
-
-#delete-form h2 {
-    margin-top: 0;
-}
-
-#delete-form label {
-    display: block;
-}
-
-#delete-form form > * {
-    margin-bottom: 5px;
-}
-
 
 h4 {
     margin-bottom: 0;
