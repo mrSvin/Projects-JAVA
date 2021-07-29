@@ -14,43 +14,40 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 @RestController
 public class TodoController {
 
-    private final TodoRepository todoRepository;
+    //private final TodoRepository todoRepository;
+    TodoServiceImpl todoService;
 
     // Рекомендуемый вариант внедрения зависимости:
     // внедрение зависимости в класс через конструктор
     public TodoController(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
+        //this.todoRepository = todoRepository;
+        todoService = new TodoServiceImpl(todoRepository);
     }
 
     @GetMapping("/todos/")
     public List<Todo> list() {
-        Iterable<Todo> bookIterable = todoRepository.findAll();
-
-        List<Todo> todos = new ArrayList<>();
-        for (Todo todo : bookIterable) {
-            todos.add(todo);
-        }
-        return todos;
+        return todoService.getTodo();
     }
 
     //Добавление дела
     @PostMapping("/todos/")
     public int add(Todo todo) {
-        Todo newTodo = todoRepository.save(todo);
-        return newTodo.getId();
+        todoService.addTodo(todo);
+        return 1;
     }
 
 
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") int id) {
-        todoRepository.deleteById(id);
+        todoService.deleteByid(id);
         System.out.println(id);
         return "Delete by id called";
     }
+
     @RequestMapping(value = "/{deleteall}", method = DELETE)
     @ResponseBody
     public String deleteAll() {
-        todoRepository.deleteAll();
+        todoService.deleteall();
 
         return "Delete by id called";
     }
@@ -58,46 +55,40 @@ public class TodoController {
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable int id) {
-        todoRepository.deleteById(id);
+        todoService.deleteByid(id);
 
         return "Удалено дело №" + id;
     }
 
     @GetMapping("/deleteall")
     public String deleteall() {
-        todoRepository.deleteAll();
+        todoService.deleteall();
         return "Удалены все дела";
     }
 
     @PutMapping("/update/{id}/{todoupdate}")
     public String updateput(@PathVariable String todoupdate, @PathVariable int id) {
-        Todo todo = new Todo();
-        todo.setId(id);
-        todo.setName(todoupdate);
-        todoRepository.save(todo);
+        todoService.updateTodo(todoupdate, id);
         return "Обновлено дело №" + id;
     }
 
 
     @GetMapping("/update/{id}/{todoupdate}")
     public String update(@PathVariable String todoupdate, @PathVariable int id) {
-        Todo todo = new Todo();
-        todo.setId(id);
-        todo.setName(todoupdate);
-        todoRepository.save(todo);
+        todoService.updateTodo(todoupdate, id);
         return "Обновлено дело №" + id;
     }
 
 
-    @GetMapping("/todos/{id}")
-    public ResponseEntity<?> get(@PathVariable int id) {
-        Optional<Todo> optionalBook = todoRepository.findById(id);
-
-        if (!optionalBook.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-
-        return new ResponseEntity<>(optionalBook.get(), HttpStatus.OK);
-    }
+//    @GetMapping("/todos/{id}")
+//    public ResponseEntity<?> get(@PathVariable int id) {
+//        Optional<Todo> optionalBook = todoRepository.findById(id);
+//
+//        if (!optionalBook.isPresent()) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//        }
+//
+//        return new ResponseEntity<>(optionalBook.get(), HttpStatus.OK);
+//    }
     //for new commit
 }
