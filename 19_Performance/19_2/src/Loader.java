@@ -24,19 +24,19 @@ public class Loader {
 
         long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
-        String fileName = "res/data-18M.xml";
-
-//        SAXParserFactory factory = SAXParserFactory.newInstance();
-//        SAXParser parser = factory.newSAXParser();
-//        SAXparser handler = new SAXparser();
-//        parser.parse(new File(fileName), handler);
-//        handler.printDuplicatedVoters();
+        String fileName = "res/data-1572M.xml";
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
-        SAXparserOptimized handler = new SAXparserOptimized();
+        SAXparser handler = new SAXparser();
         parser.parse(new File(fileName), handler);
         handler.printDuplicatedVoters();
+
+//        SAXParserFactory factory = SAXParserFactory.newInstance();
+//        SAXParser parser = factory.newSAXParser();
+//        SAXparserOptimized handler = new SAXparserOptimized();
+//        parser.parse(new File(fileName), handler);
+//        handler.printDuplicatedVoters();
 
 //        parseFile(fileName);
 
